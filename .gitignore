@@ -47,3 +47,6 @@ bower.json
 # Ignore node_modules
 node_modules/
 
+._.DS_Store
+.DS_Store
+._*
