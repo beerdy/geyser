@@ -1,0 +1,2 @@
+module ParthnersHelper
+end

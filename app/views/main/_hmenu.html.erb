@@ -1,0 +1,23 @@
+<!-- Main Navigation
+================================================== -->
+<div class="span7 navigation">
+  <div class="navbar hidden-phone">
+    <ul class="nav">
+      <% @pages.each do |page| %>
+        <li><%= link_to page.title, ((page.link.nil?||page.link=='') ? page : "/#{page.link}" ) %></li>
+      <% end %>
+    </ul>
+  </div>
+<div class="contact-head"><%= fa_icon('phone') %> +7(4742)78-40-48</div>
+   <!-- Mobile Nav
+  ================================================== -->
+  <form action="#" id="mobile-nav" class="visible-phone">
+    <div class="mobile-nav-select">
+      <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+        <% @pages.each do |page| %>
+          <option value=<%=  ((page.link.nil?||page.link=='') ? "/pages/#{page.id}" : "/#{page.link}" ) %>><%= page.title %></option>
+        <% end %>
+      </select>
+    </div>
+  </form>
+</div>

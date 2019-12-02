@@ -1,0 +1,47 @@
+<%= form_with(model: parthner, local: true) do |form| %>
+  <% if parthner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parthner.errors.count, "error") %> prohibited this parthner from being saved:</h2>
+
+      <ul>
+      <% parthner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :parthner_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :parthner_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :parthner_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link, id: :parthner_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complectation_id %>
+    <%= form.text_field :complectation_id, id: :parthner_complectation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show %>
+    <%= form.check_box :show, id: :parthner_show %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

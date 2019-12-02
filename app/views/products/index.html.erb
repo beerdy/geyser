@@ -1,0 +1,37 @@
+ <section class="intro_small wave">
+    <ul class="slidewrapper">
+        <li class="slide s01">
+          <div class="overlay">
+        </li>
+    </ul>
+</section>
+
+<section class="page">
+  <div class="content">
+<p id="notice"><%= notice %></p>
+
+<h1>Каталог</h1>
+
+    <div class="iteams">
+      <% @products.all.each do |product| %>
+        <div class="iteam">
+          <div class="content">
+            <div class="title"><%= product.title %></div>
+            <% if product.images %>
+                  <div class="img">
+                    <%= image_tag product.images.first.image, height: '150'%>
+                  </div>
+            <% else %>
+              <div class="img">
+                <%= image_tag 'backgrounds/no-image320x240.png', height: '150' %>
+              </div>
+            <% end %>
+            <div class="price">от <%= product.link %> руб.</div>
+            <div class="description"><%= link_to 'Подробнее', product %></div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+</div><!-- End Gallery Row -->
+</section>

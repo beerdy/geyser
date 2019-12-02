@@ -1,0 +1,68 @@
+
+.tobasket {
+  display: block;
+  cursor: pointer;
+  padding: 10px 0 6px !important;
+  margin-bottom: 20px !important;
+  span {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    margin-top: 0.26em;
+    text-transform: uppercase;
+  }
+  clear: both;
+  .basket {
+    display: inline-block;
+    float: none;
+  }
+}
+
+.product-new form {
+  display: none;
+}
+
+.product-added, .order-created {
+  text-align: center;
+  h3 {
+    color:rgba(0, 92, 183, 0.8);
+  }
+}
+
+.cart-table {
+  width: 100%;
+  td {
+    padding: 14px;
+    text-align: center;
+  }
+  h3 {
+    color: #fff;
+  }
+  h4 {
+    font-size: 2em;
+  }
+}
+
+section {
+  .small {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.order-description, .order-send label, .order-send .actions, .order-link, .order-session {
+  display: none;
+}
+
+.order-send, .order-new .small {
+  margin-bottom: 31px;
+}
+
+.order-send {
+  a, th:nth-child(3) h3 {
+    display: none
+  }
+}
+.order-remove {
+  padding-bottom: 4px;
+}

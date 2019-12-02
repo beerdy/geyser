@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Гейзер</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="8e89eeb47c58f95e" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <script>
+
+$(document).ready(function(){
+  $("section").addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeIn', 
+
+      removeClassAfterAnimation: false, // Remove added classes after animation has finished
+      offset: 10, // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
+      invertBottomOffset: true, // Add the offset as a negative number to the element's bottom
+      repeat: false, // Add the possibility to remove the class if the elements are not visible
+      callbackFunction: function(elem, action){}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
+    scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
+  });
+
+$(".img img").on("click", function(e) {
+    var href = $(this).attr('src');
+    mrgallery.open(href);
+    
+    return false;
+});
+
+}); 
+
+function bigMenu(it){
+  console.log('OpenMenu');
+  $('.bigMenu').toggle('active');
+  $('.menuiBlock').toggleClass('active');
+  return false;
+}
+
+var mrgallery = {
+  open: function(href){
+    $('body').append('<div class="MrGallery animated fadeIn" onclick="mrgallery.close(this)"><div class="ImgOpened animated jackInTheBox" style="background-image:url(\''+href+'\');"></div></div>')
+    return false;
+  },
+ close: function(e){
+    $(e).remove();
+    return false;
+  }
+}
+
+</script>
+  <body>
+<header class="header animated fadeIn">
+  <div class="headerBox">
+    <a class="logo animated bounceIn" href="/"></a>
+    <div class="right animated fadeInDown">
+      <div class="socials"><a class="telegram" href=""></a><a class="whatsapp" href=""></a></div>
+      <div class="phone"><b>+7 (952) 592-96-77</b>+7 (909) 223-93-53</div>
+      <div class="adress"><b>г. Липецк, ул. Металлургов 3Б</b>с 9:00 До 19:00 без перерывов</div>
+      <nav class="generalMenu animated fadeInDown">
+        <a href="/products" class="iteam">Каталог</a>
+        <a href="/pages/6" class="iteam">О нас</a>
+        <a href="/pages/7/parthners/2" class="iteam">ГДЕ КУПИТЬ</a>
+        <a href="/#contacts" class="iteam">Контакты</a>
+        <%= link_to "Скачать каталог", "assets/catalog.xlsx", class: "callBack" %>
+
+        <a href="/carts" class="basket"></a>
+      </nav>
+    </div>
+    <div class="buttons animated fadeInUp"></div>
+</header>
+<%= yield %>
+<section class="contacts wave2" id="contacts">
+  <div class="content">
+    <h2>Контакты</h2>
+    <p>По всем вопросам сотрудничества, покупки, доставки, оплаты, технической поддержки обращайтесь по нижеуказанным телефонам.</p>
+    <div style="overflow:hidden;">
+      <div class="phone">
+        <h4>Отдел продаж</h4>
+        <b>+7 (909) 223-93-53</b><div class="socials"><a class="telegram" href="/"></a><a class="whatsapp" href="/"></a></div>
+      </div>
+      <div class="phone">
+       <h4>Технический отдел</h4>
+        <b>+7 (952) 592-96-77</b><div class="socials"><a class="telegram" href="/"></a><a class="whatsapp" href="/"></a></div>
+      </div>
+      <div class="adress"><b style="width:100%;">г. Липецк, ул. Металлургов 3Б</b>с 9:00 До 19:00 без перерывов</div>
+    </div>
+
+    <div class="map">
+       <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A315c512d70c9f23ee8180ff5b000c814e5bba3d1b16a9e79406035cc10e1da89&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+
+    <h4>© ГЕЙЗЕР 2019. Все права защищены.</h4>
+    <h4>Разработка сайт - ОткликПавер</h4>
+  </div>
+</section>
+<a class="menuiBlock" href="/contacts" onclick="return bigMenu(this);"><span></span></a>
+<div class="bigMenu">
+  <section id="bbmenu" class="contentpage">
+    <div class="contentpage_box">
+      <div class="contentpage_box_flex">
+    <div class="col2">
+        <a href="/products" class="bigMenu_list">Каталог</a>
+        <a href="/pages/6" class="bigMenu_list">О нас</a>
+        <a href="/pages/7/parthners/2" class="bigMenu_list">Где купить</a>
+        <a href="/#contacts" class="bigMenu_list">Контакты</a>
+        <a href="/#question" class="bigMenu_list">Скачать каталог</a>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ГДЕ КУПИТЬ</h1>
+<p>НАШИ ПАРТНЕРЫ</p>
+<div class="tabs">
+    <% @parthners.each do |parthner| %>
+      <%= link_to parthner.title, page_parthner_path(id: parthner.id) %></td>
+    <% end %>
+</div>
+
+  
+  <div class="map">
+    <h3><%= current_parthner.title %></h3>
+    <%= current_parthner.description.html_safe %>
+  </div>
+
+<br>
+
+

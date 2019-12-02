@@ -1,0 +1,106 @@
+ <section class="intro wave">
+    <ul class="slidewrapper">
+        <li class="slide s01">
+          <div class="overlay">
+            <div class="text">
+              <div class="text_flex animated fadeInRight">
+              <span>Коллектор распределительный</span>
+              <div>Неотъемлемая часть Вашей котельной. Наши специалисты свяжутся с Вами для предоставления детальной консультации</div>
+            </div>
+          </div>
+        </li>
+    </ul>
+    <div class="prev-next-btns">
+        <div class="prev-btn"></div>
+        <div class="next-btn"></div>
+    </div>
+    <ul class="nav-btns">
+        <li class="slide-nav-btn"></li>
+        <li class="slide-nav-btn"></li>
+        <li class="slide-nav-btn"></li>
+    </ul>
+</section>
+
+<section class="uslugi" id="uslugi">
+  <div class="content">
+    <h2>Каталог продукции</h2>
+    <p>Вся наша продукция обязательно тестируется на реальных обьектах прежде чем запускается в серийное производство.</p>
+    
+    <div class="iteams">
+      <% Product.all.each do |product| %>
+        <div class="iteam">
+          <div class="content">
+            <div class="title"><%= product.title %></div>
+            <% if product.images %>
+                  <div class="img">
+                    <%= image_tag product.images.first.image, height: '150'%>
+                  </div>
+            <% else %>
+              <div class="img">
+                <%= image_tag 'backgrounds/no-image320x240.png', height: '150' %>
+              </div>
+            <% end %>
+            <div class="price">от <%= product.link %> руб.</div>
+            <div class="description"><%= link_to 'Подробнее', product %></div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <a href="/products" class="buttonB">Весь каталог</a>
+
+</section>
+
+<section class="delivery wave wave2" id="question">
+  <div class="content">
+    <h2>Доставка & Оплата</h2>
+    <article>
+    <h4>Условия доставки</h4>
+<p>Доставка осуществляется бесплатно транспортными компаниями по всей территории России независимо от объема заказа и стоимости.
+Доставка в страны РФ оплачивается заказчиком.</p>
+<p>Выбор транспортной компании остается за логистом компании «GEYZER», но в большинстве случаев - это ТК «Деловые Линии» и ТК «CDEK»
+Доставка не подразумевает "доставку до порога", т.е. будет оплачена до терминала транспортной компании города заказчика.</p>
+<h4>Оплата</h4>
+<p>Оплата продукции компании GEYZER возможна двумя способами: на карту Сбербанка или по счету. После получения заказа менеджер связывается с заказчиком и обговаривает условия оплаты и место доставки.</p>
+   
+    </article>
+  </div>
+</section>
+
+<section class="posts" id="posts">
+  <div class="content">
+    <h2>Гейзер - производственная компания</h2>
+    <p>На всю продукцию компании "GEYZER " действует гарантия в течении пяти лет. При любом дефекте, выявленном после установки и запуска оборудования, компания «GEYZER» обязуется немедленно отправить в адрес заказчика новое изделие. Только после того, как новое изделие будет получено заказчиком, установлено и проверено на отсутствие брака, заказчик возвращает бракованное изделие для изучения причин возникновения неисправности.</p>
+  </div>
+</section>
+
+<section class="win wave wave2" id="win">
+  <div class="content">
+    <h2>Почему мы</h2>
+    <% @why_we.each_with_index do |why_we,index|%>
+    <div class="block ico<%=index+1%>">
+      <div class="line2"><%= why_we.title %></div>
+      <div class="line3"><%= why_we.description.html_safe%></div>
+    </div>
+    <%end%>
+
+  </div>
+</section>
+
+<section class="order" id="question">
+  <div class="content">
+    <h2>Задать вопрос</h2>
+    <div>
+        <span class="orderinput1">
+            <input type="text" name="text-14" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="Ваше имя">
+        </span>
+        <span class="orderinput2">
+            <input type="tel" name="tel-892" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="+7 (___)">
+        </span>
+         <span class="orderinput3">
+            <input type="text" name="text-13" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="Ваш вопрос">
+        </span><br>
+        <input type="submit" value="Отправить" class="buttonA">
+        <div class="small">При отправке формы Вы соглашаетесь на обработку персональных данных</div>
+</div>
+  </div>
+</section>

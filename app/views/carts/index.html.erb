@@ -1,0 +1,86 @@
+ <section class="intro_small wave">
+    <ul class="slidewrapper">
+        <li class="slide s01">
+          <div class="overlay">
+        </li>
+    </ul>
+</section>
+
+<section class="page order-new">
+  <div class="content">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Корзина</h1>
+    
+    <% if @carts.first %>
+    
+    <%= @cart_html.html_safe %>
+
+    <br>
+    
+    <div class="order-send">
+      <%= form_with(model: @message, local: true) do |form| %>
+        <% if @message.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+            <ul>
+            <% @message.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field order-link">
+          <%= form.label :link %>
+          <%= form.text_field :link, id: :cart_link, value: @link %>
+        </div>
+        
+        <div class="field order-session">
+          <%= form.label :session %>
+          <%= form.text_field :session, id: :cart_session, value: request.session.id %>
+        </div>
+
+        <span class="orderinput1">
+          <div class="field">
+            <%= form.label :name %>
+            <%= form.text_field :name, id: :message_name, placeholder: "Ваше имя" %>
+          </div>
+        </span>
+        <span class="orderinput2">
+          <div class="field">
+            <%= form.label :phone %>
+            <%= form.text_field :phone, id: :message_phone, type: "tel", size: "40", placeholder: "+7 (___)"  %>
+          </div>
+        </span>
+        <div class="field order-description">
+          <%= form.label :description %>
+          <%= form.text_area :description, id: :message_description, value: @cart_html %>
+        </div>
+
+        <span class="orderinput3">
+          <div class="field order-slave">
+            <%= form.label :slave %>
+            <%= form.text_field :slave, id: :message_slave, placeholder: "Пожелания (адрес)"%>
+          </div>
+        </span>
+
+        <div class="actions">
+          <%= form.submit 'js_make_order_button', :class => 'js_make_order_button' %>
+        </div>
+      <% end %>        
+    </div>
+
+    <a class="price2 tobasket js_make_order_link">
+      <span>Оформить заказ</span>
+      <div href="/" class="basket"></div>
+    </a>
+    <div class="small">При отправке формы Вы соглашаетесь на обработку персональных данных</div>
+    
+    <% else %>
+    <div class="small">Корзина пуста - хотиите <%= link_to 'Посетить Каталог', products_path %> ?</div>
+    <% end %>
+
+  </div>
+</section>

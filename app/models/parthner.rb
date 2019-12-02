@@ -1,0 +1,2 @@
+class Parthner < ApplicationRecord
+end

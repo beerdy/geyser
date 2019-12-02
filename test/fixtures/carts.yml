@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session: MyString
+  product: MyString
+  quantify: 1
+  active: false
+
+two:
+  session: MyString
+  product: MyString
+  quantify: 1
+  active: false

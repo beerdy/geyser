@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <style type="text/css">
+      th {
+        background-color: #3D7CC5;
+        color: #fff;
+      }
+      td {
+        text-align: center;
+      }
+      td:nth-child(3) {
+        color: #fff;
+      }
+    </style>
+    <ul>
+      <li><strong>Имя</strong>: <%= @message.name %></li>
+      <li><strong>Телефон</strong>: <%= @message.phone %></li>
+    </ul>
+    <p><%= @message.slave %></p>
+    <%= @message.description.gsub( 'УДАЛИТЬ', '' ).html_safe %>
+  </body>
+</html>

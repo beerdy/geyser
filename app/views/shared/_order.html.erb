@@ -1,0 +1,35 @@
+<section class="intro_small wave">
+  <ul class="slidewrapper">
+    <li class="slide s01">
+      <div class="overlay">
+    </li>
+  </ul>
+</section>
+
+<section class="page order-created">
+  <div class="content">
+    <p id="notice"><%= notice %></p>
+  </div>
+  
+  <div class="content">
+    <p id="notice"></p>
+
+    <h1>Ваш заказ</h1>
+    <% if message %>
+      <% if link %>
+      <div class="order-remove" >
+        <u>Ссылка на ваш заказ: <a href="/messages/<%=message.id%>"><%= link %></a></u> - <a data-confirm="Вы хотите удалить заказ?" rel="nofollow" data-method="delete" href="/messages/<%=message.id%>">УДАЛИТЬ</a>
+      </div>
+      <% end %>
+      <div class="order-send">
+        <%= message.description.html_safe %>
+      </div>
+    <% else %>
+      <div class="small">У Вас нет заказов - хотиите <%= link_to 'Посетить Каталог', products_path %> ?</div>
+    <% end %>
+
+  </div>
+  <% if message %>
+    <h3> << <%= link_to 'Вернуться в каталог', products_path %></h3>    
+  <% end %>
+</section>

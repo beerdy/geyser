@@ -1,0 +1,23 @@
+ <section class="intro_small wave">
+    <ul class="slidewrapper">
+        <li class="slide s01">
+          <div class="overlay">
+        </li>
+    </ul>
+</section>
+
+<section class="page">
+	<div class="content">
+	<p id="notice"><%= notice %></p>
+
+	<div class="row gallery-row"><!-- Begin Gallery Row --> 
+	  
+	    <div class="span12">
+	        <h1 class="title-bg"><%=@page.title%></h1>
+
+	        <%= @page.description.try(:html_safe) %>
+
+	    </div>
+	</div>
+</div><!-- End Gallery Row -->
+</section>
