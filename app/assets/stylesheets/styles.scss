@@ -624,6 +624,7 @@ section.intro{
     height: 100vh;
     background: #957e78;
     padding: 0;
+    z-index: 997;
 }
 
 	.slidewrapper {
@@ -1288,7 +1289,7 @@ span.wpcf7-not-valid-tip{
         float: right;
         text-align: center;
         background:#fff;
-        z-index: 10;
+        z-index: 999;
     }
       .menuiBlock span {
         display: block;
@@ -1421,7 +1422,7 @@ span.wpcf7-not-valid-tip{
   width:100%;
   height:100%;
   background: linear-gradient(122.28deg, rgba(4, 112, 220, 0.8) -2.02%, rgba(19, 241, 252, 0.8) 129.72%);
-  z-index: 3;
+  z-index: 998;
 }
 
   .bigMenu .col2{
