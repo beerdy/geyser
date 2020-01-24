@@ -1617,7 +1617,13 @@ span.wpcf7-not-valid-tip{
 	    float: none;
 	}
 }
-
+.mobile-menu .socials {
+	width: 100%;
+	a {
+		margin-left: 48% !important;
+		float: none !important;
+	}
+}
 
 .MrGalleryPhotos{
 	overflow: hidden;

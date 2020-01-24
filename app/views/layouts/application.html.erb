@@ -56,8 +56,8 @@ var mrgallery = {
     <a class="logo animated bounceIn" href="/"></a>
     <div class="right animated fadeInDown">
       <div class="socials">
-        <a class="telegram" href="tg://resolve?domain="DmitriyKlo"></a>
-        <a class="whatsapp" href="https://wa.me/79092239353?text=Здравствуйте.%20Вопрос%20с%20сайта%20ГЕЙЗЕР."></a>
+        <a class="telegram" href="<%= @telegram_link_1%>"></a>
+        <a class="whatsapp" href="<%= @whatsapp_link_1%>"></a>
       </div>
       <div class="phone"><b>+7 (952) 592-96-77</b>+7 (909) 223-93-53</div>
       <div class="adress"><b>г. Липецк, ул. Металлургов 3Б</b>с 9:00 До 19:00 без перерывов</div>
@@ -81,11 +81,15 @@ var mrgallery = {
     <div style="overflow:hidden;">
       <div class="phone">
         <h4>Отдел продаж</h4>
-        <b>+7 (909) 223-93-53</b><div class="socials"><a class="telegram" href="/"></a><a class="whatsapp" href="/"></a></div>
+        <b>+7 (909) 223-93-53</b><div class="socials">
+          <a class="telegram" href="<%= @telegram_link_1%>"></a>
+          <a class="whatsapp" href="<%= @whatsapp_link_1%>"></a></div>
       </div>
       <div class="phone">
        <h4>Технический отдел</h4>
-        <b>+7 (952) 592-96-77</b><div class="socials"><a class="telegram" href="/"></a><a class="whatsapp" href="/"></a></div>
+        <b>+7 (952) 592-96-77</b><div class="socials">
+          <a class="telegram" href="<%= @telegram_link_2%>"></a>
+          <a class="whatsapp" href="<%= @whatsapp_link_2%>"></a></div>
       </div>
       <div class="adress"><b style="width:100%;">г. Липецк, ул. Металлургов 3Б</b>с 9:00 До 19:00 без перерывов</div>
     </div>
@@ -103,12 +107,18 @@ var mrgallery = {
   <section id="bbmenu" class="contentpage">
     <div class="contentpage_box">
       <div class="contentpage_box_flex">
-    <div class="col2">
+    <div class="col2 mobile-menu">
+      <div class="socials">
+        <a class="telegram" href="<%= @telegram_link_1%>"></a>
+      </div>
+      <div class="socials">
+        <a class="whatsapp" href="<%= @whatsapp_link_1%>"></a>
+      </div>
         <a href="/products" class="bigMenu_list">Каталог</a>
         <!-- <a href="/pages/6" class="bigMenu_list">О нас</a> -->
         <a href="/pages/7/parthners/2" class="bigMenu_list">Где купить</a>
         <a href="/#contacts" class="bigMenu_list">Контакты</a>
-        <a href="/#question" class="bigMenu_list">Скачать каталог</a>
+        <%= link_to "Скачать каталог",  @catalog_xls_url , class: "bigMenu_list" %>
         <a href="/carts" class="bigMenu_list">Корзина</a>
     </div>
   </div>
