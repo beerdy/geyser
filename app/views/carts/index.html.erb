@@ -58,14 +58,18 @@
           <%= form.label :description %>
           <%= form.text_area :description, id: :message_description, value: @cart_html %>
         </div>
-
         <span class="orderinput3">
-          <div class="field order-slave">
-            <%= form.label :slave %>
-            <%= form.text_field :slave, id: :message_slave, placeholder: "Пожелания (адрес)"%>
+          <div class="field order-email">
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :message_email, placeholder: "E-Mail"%>
           </div>
         </span>
-
+        <span class="orderinput4">
+          <div class="field order-slave">
+            <%= form.label :slave %>
+            <%= form.text_field :slave, id: :message_slave, placeholder: "Адрес"%>
+          </div>
+        </span>
         <div class="actions">
           <%= form.submit 'js_make_order_button', :class => 'js_make_order_button' %>
         </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191126135001) do
+ActiveRecord::Schema.define(version: 20200124092958) do
 
   create_table "carts", force: :cascade do |t|
     t.string "session"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(version: 20191126135001) do
     t.integer "sort"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "asset_file_name"
+    t.string "asset_content_type"
+    t.bigint "asset_file_size"
+    t.datetime "asset_updated_at"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -84,6 +88,7 @@ ActiveRecord::Schema.define(version: 20191126135001) do
     t.text "slave"
     t.string "link"
     t.string "session"
+    t.string "email"
   end
 
   create_table "pages", force: :cascade do |t|
