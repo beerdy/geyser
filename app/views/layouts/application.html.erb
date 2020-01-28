@@ -53,6 +53,17 @@ var mrgallery = {
   <body>
 <header class="header animated fadeIn">
   <div class="headerBox">
+    <style type="text/css">
+    .logo{
+      float:left;
+      display: block;
+      width: 200px;
+      height: 80px;
+      background:url("<%= @logo_image_url %>") no-repeat center;
+      background-size: contain;
+      margin:48px 0 0 0;
+    }
+    </style>
     <a class="logo animated bounceIn" href="/"></a>
     <div class="right animated fadeInDown">
       <div class="socials">
