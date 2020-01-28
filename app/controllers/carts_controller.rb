@@ -102,7 +102,7 @@ class CartsController < ApplicationController
       if Rails.env.development?
         @link = "http://localhost:3000/orders/#{request.session.id}"
       else
-        @link = "http://geyzer.su/orders/#{request.session.id}"
+        @link = "http://geyser.su/orders/#{request.session.id}"
       end
     end
 end
