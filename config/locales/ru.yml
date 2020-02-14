@@ -18,6 +18,13 @@ ru:
       partner: 'Партнеры'
       rent: 'Аренда'
       info: 'Инфо - блоки'
+      cart: 'Корзина'
+      image: 'Изображения'
+      message: 'Сообщения'
+      page: 'Страницы'
+      parthner: 'Партнеры'
+      product: 'Продукция'
+      user: 'Пользователи'
     attributes:
       shared: &shared
         title: 'Наименование'
@@ -62,11 +69,14 @@ ru:
         galleries: 'Изображения продукта'
       partner:
         <<: *shared
-      partner:
+      parthner:
         <<: *shared
       rent:
         <<: *shared
         work: 'Медиатека'
+      product:
+        <<: *shared
+        link: 'Цена'
 
   date:
     abbr_day_names:
