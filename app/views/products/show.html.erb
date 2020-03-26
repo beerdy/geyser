@@ -11,7 +11,7 @@
   <p id="notice"><%= notice %></p>
 
   <h1><%= @product.title %></h1>
-  <div class="price2"> от <%= @product.link %> руб.</div>
+  <div class="price2"><%= @product.link %> <i class="fas fa-ruble-sign"></i></div>
 
   <p>
     <%= @product.description.html_safe %>
